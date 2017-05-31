@@ -43,17 +43,17 @@ Use the following steps to configure your Azure Stack environment:
 
 1. Register an AzureRM environment that targets your Azure Stack instance by using one of the following cmdlets:  
     ```PowerShell
-    # Use this command to access the administrative portal.
+    # Use this command to access the administrative API.
     Add-AzureStackAzureRmEnvironment `
       -Name "AzureStackAdmin" `
       -ArmEndpoint "https://adminmanagement.local.azurestack.external"
 
-    # Use this command to access the user portal.
+    # Use this command to access the user API.
     Add-AzureStackAzureRmEnvironment `
       -Name "AzureStackUser" `
       -ArmEndpoint "https://management.local.azurestack.external" 
     ```
-    Following screen shot shows the output of the previous cmdlet:
+I    Following screen shot shows the output of the previous cmdlet:
 
     ![Get environment details](media/azure-stack-powershell-configure/getenvdetails.png)
 
@@ -63,7 +63,7 @@ Use the following steps to configure your Azure Stack environment:
     
     ```PowerShell
     # Use this command to get the GUID value in the administrator's environment. 
-    $TenantID = Get-DirectoryTenantID `
+I    $TenantID = Get-DirectoryTenantID `
       -AADTenantName "<myaadtenant>.onmicrosoft.com" `
       -EnvironmentName AzureStackAdmin
 
@@ -101,13 +101,13 @@ After the AzureRM environment is registered to target the Azure Stack instance, 
 2. Use the one of the following cmdlets to sign in to either the Azure Stack administrator or user account:
 
     ```powershell
-    # Use this command to sign-in to the administrative portal.
+    # Use this command to sign-in to the administrative API.
     Login-AzureRmAccount `
       -EnvironmentName "AzureStackAdmin" `
       -TenantId $TenantID `
       -Credential $Credential
 
-    # Use this command to sign-in to the user portal.
+P    # Use this command to sign-in to the user A.
     Login-AzureRmAccount `
       -EnvironmentName "AzureStackUser" `
       -TenantId $TenantID `
